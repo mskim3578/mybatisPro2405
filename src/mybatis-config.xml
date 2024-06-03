@@ -3,8 +3,17 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <settings>
+    <setting name="cacheEnabled" value="false"/>
+    <setting name="jdbcTypeForNull" value="NULL"/>
+    
+    </settings>
+    
+
 	<typeAliases>
 	<typeAlias type="model.KicMember" alias="member"/>
+	<typeAlias type="model.Student" alias="student"/>
+	<typeAlias type="model.Professor" alias="professor"/>
 	</typeAliases>
 
 	<environments default="oracle">
@@ -20,7 +29,10 @@
 		</environment>
 	</environments>
 	<mappers>
-	<mapper  resource="xml/Member.xml"/>
+	<mapper  resource="mapper/Student.xml"/>
+	<mapper  resource="mapper/Member.xml"/>
+	<mapper  resource="mapper/Professor1.xml"/>
+	<mapper   class="mapper.ProfessorAnno"/>
 	</mappers>
 </configuration>  
   
